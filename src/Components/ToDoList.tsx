@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToDo } from "../models/ToDo";
+import { MdOutlineExpandMore } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
+import { EventEmitter } from "stream";
+import ToDoItem from "./ToDoItem";
 
 interface ToDoListProps {
   items: ToDo[];
@@ -7,13 +11,9 @@ interface ToDoListProps {
 
 const ToDoList: React.FC<ToDoListProps> = (props) => {
   return (
-    <ul>
+    <ul className="mt-10 w-1/2 2xl:w-3/4 mx-auto bg-white">
       {props.items.map((item, key) => (
-        <li key={key}>
-          <h2>{item.title}</h2>
-          <p>{item.text}</p>
-          <button>Delete</button>
-        </li>
+        <ToDoItem item={item} />
       ))}
     </ul>
   );

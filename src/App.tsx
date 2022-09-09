@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
   //pass pointer
   return (
-    <div className="App bg-bg w-full h-full min-h-[100vh] py-12">
+    <div className="App bg-gradient-to-tl from-gray-900 to-gray-600 bg-gradient-to-r w-full h-full min-h-[100vh] py-12">
       <NewToDo onGet={getHandler} />
       <ToDoList items={todoes} />
     </div>
