@@ -7,13 +7,18 @@ import ToDoItem from "./ToDoItem";
 
 interface ToDoListProps {
   items: ToDo[];
+  deleteHandler(id: number): void;
 }
 
 const ToDoList: React.FC<ToDoListProps> = (props) => {
+  const deleteHandler = (id: number) => {
+    props.deleteHandler(id);
+  };
+
   return (
     <ul className="mt-10 w-1/2 2xl:w-3/4 mx-auto bg-white">
       {props.items.map((item, key) => (
-        <ToDoItem item={item} />
+        <ToDoItem deleteHandler={deleteHandler} item={item} />
       ))}
     </ul>
   );

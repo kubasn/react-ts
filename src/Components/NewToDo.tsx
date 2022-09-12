@@ -20,7 +20,8 @@ const NewToDo: React.FC<newToDoProps> = (props) => {
     event.preventDefault();
     const enteredTitle = titleInputRef.current!.value;
     const enteredText = textInputRef.current!.value;
-    props.onGet({ title: enteredTitle, text: enteredText });
+    const id = Math.floor(Math.random() * 100000);
+    props.onGet({ title: enteredTitle, text: enteredText, id });
   };
 
   return (
